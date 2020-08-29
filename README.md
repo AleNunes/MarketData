@@ -10,3 +10,12 @@
 - funcions.py: Arquivo com funções uteis para as demais classes
 
 2 - A segunda parte é o Notebook que servirá como interface para consultar a API
+Optei por utilizar o jupyter notebook como interface, para facilitar a construção de gráficos para comparação com Benchmark ou outros ativos.
+
+TODO (pessoal)
+
+- Alterar API para generalizar e consultar histórico de Cotas de outros fundos 555 da CVM.
+- Alterar API para consultar o fundo pelo CNPJ.
+- Adicionar Ibov, Ptax, IHFA
+- Adicionar calculos de vol
+- add Max drawdown
