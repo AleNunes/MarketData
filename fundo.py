@@ -32,16 +32,22 @@ class Fundo:
 
     # Retorna PL do fundo em uma data específica
     def pl(self, dt):
+        '''Retorna Patrimonio liquido em uma data específica'''
         return(self.__get_valor('pl',dt))
 
+    # Retorna cota do fundo em uma data específica
     def cota(self, dt):
+        '''Retorna Valor da Cota em uma data específica'''
         return(self.__get_valor('cota',dt))
 
+    # Retorna Rentabilidade do fundo em uma data específica
     def variacao(self, dt):
+        '''Retorna Rentabilidade em uma data específica'''
         return(self.__get_valor('var_cota',dt))
 
-
+    # Rentabilidade em um periodo
     def rent_periodo(self, ini, fim):
+        '''Retorna rentabilidade em um período, onde ini é a data inicial e fim é a data final'''
         self.ini = ini
         self.fim = fim
 
@@ -53,12 +59,13 @@ class Fundo:
             exit()
 
         r1 = self.__df.loc[ini:fim]['ftr_cota'].product(axis=0) - 1
-        # outra opcao seria : cota(fim) / cota(ini - 1)-1
+        # outra opcao de calculo seria : cota(dt_fim) / cota(dt_ini) - 1
         #print('1 - Rentabilidade do período em porcentagem: {:.4%}'.format(r1))
         return r1
         
 
     def rent_periodo_cdi(self, ini, fim):
+        '''Retorna rentabilidade em %CDI de um período, onde ini é a data inicial e fim é a data final'''
         self.ini = ini
         self.fim = fim
 
@@ -79,6 +86,7 @@ class Fundo:
 
 
     def evolucao_pl(self, ini, fim):
+        '''Retorna Evolução do PL um período, onde ini é a data inicial e fim é a data final'''
         self.ini = ini
         self.fim = fim
 
@@ -98,6 +106,7 @@ class Fundo:
 
 
     def max(self, ini, fim):
+        '''Retorna Maior variação e a data dentro de um período, onde ini é a data inicial e fim é a data final'''
         self.ini = ini
         self.fim = fim
 
@@ -117,6 +126,7 @@ class Fundo:
 
     
     def min(self, ini, fim):
+        '''Retorna Menor variação e a data dentro de um período, onde ini é a data inicial e fim é a data final'''
         self.ini = ini
         self.fim = fim
 
@@ -134,6 +144,7 @@ class Fundo:
 
 
     def dataframe(self, ini, fim):
+        
         self.ini = ini
         self.fim = fim
 

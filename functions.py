@@ -5,6 +5,11 @@ import json
 
 
 def check_date(dt):
+    '''
+    check_date(DateRef): Verifica se a data fornecida é uma data válida no formato YYYY-MM-DD
+    Verificar se a data está contida na série
+    ''' 
+    
     y, m, d = dt.split('-')
 
     is_valid = True
