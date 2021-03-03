@@ -1,3 +1,19 @@
+# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
+
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,text
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,text
+
+### Text ###
+*.doc
+*.docx
+*.log
+*.msg
+*.pages
+*.rtf
+*.txt
+*.wpd
+*.wps
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/tasks.json
@@ -31,13 +47,12 @@ $RECYCLE.BIN/
 *.msix
 *.msm
 *.msp
-*.zip
 
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode
-
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,text
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
-COTAHIST_*
+*.zip
+*.TXT

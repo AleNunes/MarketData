@@ -32,15 +32,15 @@ def parse_line(line):
     data={
         'date':line[2:10],
         'code':line[12:23].strip(),
+        'tp_mercado':line[24:26].strip(),
         'name':line[27:38].strip(),
-        #tp_mercado
         'open':to_float(line[56:69].strip()),
         'high':to_float(line[69:82].strip()),
         'low':to_float(line[82:95].strip()),
         'close':to_float(line[108:121].strip()),
         'volume':to_float(line[170:188].strip()),
-        #quant_tit
-        #quant_neg
+        # quant_tit
+        # quant_neg
     }
     return data
 
@@ -55,7 +55,6 @@ def parse_line(line):
     # 060 FUTURO COM MOVIMENTAÇÃO CONTÍNUA
     # 070 OPÇÕES DE COMPRA
     # 080 OPÇÕES DE VENDA
-
 
 
 def parse_file(year):
