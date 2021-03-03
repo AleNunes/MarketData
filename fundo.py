@@ -2,8 +2,6 @@ import pandas as pd
 import functions as f
 from cdi import CDI
 
-
-
 class Fundo:
     def __init__(self):
 
@@ -17,7 +15,6 @@ class Fundo:
 
         # Altera tipo de Data para String, para padronizar o formato da data
         #self.__df.index = self.__df.index.strftime('%Y-%m-%d')
-
 
     # Funcao generica para retornar valor do dataframe
     def __get_valor(self, campo, dt):
@@ -83,8 +80,7 @@ class Fundo:
         #print('2 - Rentabilidade do CDI: {:.4%}'.format(rent))
         return rent
 
-
-
+    
     def evolucao_pl(self, ini, fim):
         '''Retorna Evolução do PL um período, onde ini é a data inicial e fim é a data final'''
         self.ini = ini
@@ -99,7 +95,6 @@ class Fundo:
 
         idx = self.__df.index.get_loc(ini)
         dt = self.__df.index.strftime('%Y-%m-%d').values[idx-1]
-
         #print('{} - {}'.format(dt, self.pl(dt)))
 
         return self.pl(fim) - self.pl(dt)
@@ -116,13 +111,11 @@ class Fundo:
         except Exception as err:
             print('Erro: {}'.format(err))
             exit()
-        
 
         var = self.__df[ini:fim]['var_cota'].max()
         dt = self.__df[ini:fim]['var_cota'][self.__df[ini:fim]['var_cota']==var].index.item()
 
         return dt.strftime('%Y-%m-%d'), var
-
 
     
     def min(self, ini, fim):
@@ -167,10 +160,6 @@ class Fundo:
         df.index = df.index.strftime('%Y-%m-%d')
 
         return df
-
-
-
-
 
 
     #def fator(self):

@@ -51,4 +51,6 @@ def check_date_interval(dt_ini, dt_fim):
 
 
 
-#print(check_date('2020-05-01'))
+
+
+#print(check_date('2020-05-01')) 
