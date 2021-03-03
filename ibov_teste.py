@@ -32,15 +32,15 @@ def parse_line(line):
     data={
         'date':line[2:10],
         'code':line[12:23].strip(),
-        'tp_mercado':line[24:26].strip(),
+        'tp_mercado':line[24:27].strip(),
         'name':line[27:38].strip(),
         'open':to_float(line[56:69].strip()),
         'high':to_float(line[69:82].strip()),
         'low':to_float(line[82:95].strip()),
         'close':to_float(line[108:121].strip()),
         'volume':to_float(line[170:188].strip()),
-        # quant_tit
-        # quant_neg
+        'quant_tit':to_float(line[152:170].strip()),
+        'quant_neg':to_float(line[147:152].strip()),
     }
     return data
 
@@ -75,7 +75,7 @@ def parse_file(year):
 
 
 ano_ini = 2015
-ano_fim = 2021
+ano_fim = 2016 #2021
 
 for year in range(ano_ini, ano_fim):
     get_bvsp_file(year)
